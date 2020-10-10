@@ -7,7 +7,7 @@ std::int32_t main()
 {
     sodium_init();
 
-    ls::validation v( "localhost:8001", "WZ4jkH4wpN0WOrDTKKHd1cWAo3cb9VkC1VsfAvClpgI=" );
+    ls::validation v( "localhost:8001", "DUx1Laid4QYY2IhUl0jg9JyP74y7esKDCSVn49Ix6Fc=" );
      // 400: Bad Request
      // 401: Unauthorized
     if( !v.login( "test-user" ) ) {
