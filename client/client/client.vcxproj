@@ -178,7 +178,9 @@
     <None Include="src\requirements.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="contrib\okdshin\picosha2.h" />
     <ClInclude Include="src\auth\hwid.hpp" />
+    <ClInclude Include="src\auth\smbios.hpp" />
     <ClInclude Include="src\auth\validation.hpp" />
     <ClInclude Include="src\crypto\base64.hpp" />
     <ClInclude Include="src\crypto\sealedbox.hpp" />
