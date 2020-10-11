@@ -7,6 +7,15 @@ The only known vulnerability of the PoC is the HWID itself. The plain HWID is st
 
 For more informations, checkout the other README files.
 
+## Fork differences
+
+[x]  smbios hwid
+
+[x] enhanced xorstr (xtea3+xor)
+
+[x] ssl pinning
+
+
 ## Credits
 
 - @nlohmann (JSON header)
