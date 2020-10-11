@@ -1,22 +1,12 @@
 ﻿using Nett;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ls_gui_control
 {
-    public class Config
-    {
-        public string ls_server { get; set; }
-        public string ls_token { get; set; }
-    }
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -25,10 +15,19 @@ namespace ls_gui_control
 
             // прочитаем конфиг
             var raw = FileHelper.LoadFile("Config.toml");
-            var toml = string.Join("\n", raw.ToArray());
-            var sc = Toml.ReadString<Config>(toml);
 
-            Application.Run(new ConfigNotFound());
+            // проверяем найден ли конфигурационный файл
+            if (Utils.IsAny(raw) == false)
+            {
+                // если не нашли то вызываем окошко добавления конф. файла
+                Application.Run(new ConfigNotFound());
+            }
+            else
+            {
+                // нашли конфиг
+                Application.Run(new Control());
+            }
+
         }
     }
 }

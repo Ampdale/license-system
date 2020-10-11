@@ -107,6 +107,7 @@
             this.add_config.TabIndex = 5;
             this.add_config.Text = "Add";
             this.add_config.UseVisualStyleBackColor = true;
+            this.add_config.Click += new System.EventHandler(this.add_config_Click);
             // 
             // ConfigNotFound
             // 
