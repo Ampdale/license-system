@@ -1,4 +1,3 @@
-
 /**
  * @author    ReactiioN
  * @copyright 2019, reactiion.net
@@ -6,10 +5,12 @@
  */
 'use strict'
 
-module.exports = (config, db)  => {
-  const express    = require('express'),
-        bodyParser = require('body-parser'),
-        app        = express()
+module.exports = (config, db) => {
+  const express = require('express'),
+    bodyParser = require('body-parser'),
+    app = express()
+  const https = require('https')
+  const fs = require('fs')
 
   app.use(bodyParser.urlencoded({extended: true}))
   app.use(bodyParser.json())
@@ -39,7 +40,7 @@ module.exports = (config, db)  => {
   const backend = require('./backend')(app, config, db)
 
   app.get('/version', (req, res) => backend.writeResponse(res, config.web.version))
-  app.get('/online',  (req, res) => backend.writeResponse(res, config.web.active === true ? '1' : '0'))
+  app.get('/online', (req, res) => backend.writeResponse(res, config.web.active === true ? '1' : '0'))
   app.post('/client', (req, res) => backend.handleClientPostRequest(req, res))
 
   // page is necessary, so we send forbidden status
@@ -47,5 +48,8 @@ module.exports = (config, db)  => {
   // redirect everything (except for our rest api) to index, which is the forbidden page.
   app.get('*', (req, res) => res.redirect('/'))
 
-  const server = app.listen(config.web.port, () => global.log.notice(`listening at port: ${server.address().port}`))
+  const server = https.createServer({
+    key: fs.readFileSync('server.key'),
+    cert: fs.readFileSync('server.cert')
+  }, app).listen(config.web.port, () => global.log.notice(`listening at port: ${server.address().port}`))
 }
