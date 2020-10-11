@@ -9,11 +9,11 @@ For more informations, checkout the other README files.
 
 ## Fork differences
 
-[x]  smbios hwid
+- [x]  smbios hwid
 
-[x] enhanced xorstr (xtea3+xor)
+- [x] enhanced xorstr (xtea3+xor)
 
-[x] ssl pinning
+- [x] ssl pinning
 
 
 ## Credits
