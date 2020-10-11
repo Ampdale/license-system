@@ -1,4 +1,6 @@
 ## RUS
 
-Для противодействия снифу, нужно использовать SPKI Fingerprint.
+Важная информация для генерации хеша
+https://curl.haxx.se/libcurl/c/CURLOPT_PINNEDPUBLICKEY.html
 
+Хеш нужно генерировать строго по мануалу.

@@ -52,8 +52,9 @@ std::string ls::http_post(
     if( !curl_data ) {
         return {};
     }
-
-    auto query = std::string( server );
+    
+    std::string query = "https://"; 
+    query.append(server);
     if( !file.empty() ) {
         if( query.back() != '/' || file.front() != '/' ) {
             query += '/';
@@ -66,7 +67,12 @@ std::string ls::http_post(
     curl_easy_setopt( curl_data, CURLOPT_POST, 1L );
     curl_easy_setopt( curl_data, CURLOPT_POSTFIELDS, data.data() );
     curl_easy_setopt( curl_data, CURLOPT_TIMEOUT, timeout );
-    curl_easy_setopt( curl_data, CURLOPT_SSL_VERIFYPEER, 1L );
+#if !defined(_DEBUG)
+    curl_easy_setopt(curl_data, CURLOPT_SSL_VERIFYPEER, 1L);
+#else
+    curl_easy_setopt(curl_data, CURLOPT_SSL_VERIFYPEER, 0L);
+#endif
+    curl_easy_setopt( curl_data, CURLOPT_PINNEDPUBLICKEY, "sha256//kmZIXrV5bskXp/f14+w4s/jeFtxqQAoXaUcPJHwGUTo=");
     curl_easy_setopt( curl_data, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0 );
     curl_easy_setopt( curl_data, CURLOPT_MAXFILESIZE, 1024 * 1024 * 1024 );
     curl_easy_setopt( curl_data, CURLOPT_WRITEDATA, &response );
