@@ -36,7 +36,23 @@
             this.hostname_ = new System.Windows.Forms.Label();
             this.mastertoken_ = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.getUsers = new System.Windows.Forms.TabPage();
+            this.getUser = new System.Windows.Forms.TabPage();
+            this.getUsersGrid = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hwid_hash = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_added = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ban_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.api_access = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.api_token = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.getUsers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.getUsersGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -110,11 +126,106 @@
             this.label4.Size = new System.Drawing.Size(807, 2);
             this.label4.TabIndex = 5;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tabControl1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 170);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(663, 307);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Users";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.getUsers);
+            this.tabControl1.Controls.Add(this.getUser);
+            this.tabControl1.Location = new System.Drawing.Point(6, 19);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(654, 283);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // getUsers
+            // 
+            this.getUsers.Controls.Add(this.getUsersGrid);
+            this.getUsers.Location = new System.Drawing.Point(4, 22);
+            this.getUsers.Name = "getUsers";
+            this.getUsers.Padding = new System.Windows.Forms.Padding(3);
+            this.getUsers.Size = new System.Drawing.Size(646, 257);
+            this.getUsers.TabIndex = 0;
+            this.getUsers.Text = "getUsers";
+            this.getUsers.UseVisualStyleBackColor = true;
+            // 
+            // getUser
+            // 
+            this.getUser.Location = new System.Drawing.Point(4, 22);
+            this.getUser.Name = "getUser";
+            this.getUser.Padding = new System.Windows.Forms.Padding(3);
+            this.getUser.Size = new System.Drawing.Size(440, 242);
+            this.getUser.TabIndex = 1;
+            this.getUser.Text = "getUser";
+            this.getUser.UseVisualStyleBackColor = true;
+            // 
+            // getUsersGrid
+            // 
+            this.getUsersGrid.AllowUserToAddRows = false;
+            this.getUsersGrid.AllowUserToDeleteRows = false;
+            this.getUsersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.getUsersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.username,
+            this.hwid_hash,
+            this.date_added,
+            this.ban_date,
+            this.api_access,
+            this.api_token});
+            this.getUsersGrid.Location = new System.Drawing.Point(-4, -3);
+            this.getUsersGrid.Name = "getUsersGrid";
+            this.getUsersGrid.Size = new System.Drawing.Size(654, 264);
+            this.getUsersGrid.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            // 
+            // username
+            // 
+            this.username.HeaderText = "username";
+            this.username.Name = "username";
+            // 
+            // hwid_hash
+            // 
+            this.hwid_hash.HeaderText = "hwid_hash";
+            this.hwid_hash.Name = "hwid_hash";
+            // 
+            // date_added
+            // 
+            this.date_added.HeaderText = "date_added";
+            this.date_added.Name = "date_added";
+            // 
+            // ban_date
+            // 
+            this.ban_date.HeaderText = "ban_date";
+            this.ban_date.Name = "ban_date";
+            // 
+            // api_access
+            // 
+            this.api_access.HeaderText = "api_access";
+            this.api_access.Name = "api_access";
+            // 
+            // api_token
+            // 
+            this.api_token.HeaderText = "api_token";
+            this.api_token.Name = "api_token";
+            // 
             // Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1483, 984);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.mastertoken_);
             this.Controls.Add(this.label3);
@@ -127,6 +238,10 @@
             this.Text = "ls control panel";
             this.Load += new System.EventHandler(this.Control_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.getUsers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.getUsersGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +257,17 @@
         private System.Windows.Forms.Label hostname_;
         private System.Windows.Forms.Label mastertoken_;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage getUsers;
+        private System.Windows.Forms.TabPage getUser;
+        private System.Windows.Forms.DataGridView getUsersGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hwid_hash;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_added;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ban_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn api_access;
+        private System.Windows.Forms.DataGridViewTextBoxColumn api_token;
     }
 }
