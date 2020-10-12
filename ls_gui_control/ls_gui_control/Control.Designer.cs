@@ -131,7 +131,7 @@
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(12, 170);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(663, 307);
+            this.groupBox1.Size = new System.Drawing.Size(773, 337);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Users";
@@ -143,7 +143,7 @@
             this.tabControl1.Location = new System.Drawing.Point(6, 19);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(654, 283);
+            this.tabControl1.Size = new System.Drawing.Size(758, 313);
             this.tabControl1.TabIndex = 0;
             // 
             // getUsers
@@ -152,7 +152,7 @@
             this.getUsers.Location = new System.Drawing.Point(4, 22);
             this.getUsers.Name = "getUsers";
             this.getUsers.Padding = new System.Windows.Forms.Padding(3);
-            this.getUsers.Size = new System.Drawing.Size(646, 257);
+            this.getUsers.Size = new System.Drawing.Size(750, 287);
             this.getUsers.TabIndex = 0;
             this.getUsers.Text = "getUsers";
             this.getUsers.UseVisualStyleBackColor = true;
@@ -180,9 +180,9 @@
             this.ban_date,
             this.api_access,
             this.api_token});
-            this.getUsersGrid.Location = new System.Drawing.Point(-4, -3);
+            this.getUsersGrid.Location = new System.Drawing.Point(0, 3);
             this.getUsersGrid.Name = "getUsersGrid";
-            this.getUsersGrid.Size = new System.Drawing.Size(654, 264);
+            this.getUsersGrid.Size = new System.Drawing.Size(745, 273);
             this.getUsersGrid.TabIndex = 0;
             // 
             // id
