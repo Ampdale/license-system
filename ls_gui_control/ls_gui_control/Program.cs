@@ -1,6 +1,4 @@
-﻿using Nett;
-using System;
-using System.Linq;
+﻿using System;
 using System.Windows.Forms;
 
 namespace ls_gui_control

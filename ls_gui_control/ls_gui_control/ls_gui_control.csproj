@@ -102,10 +102,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\error.png" />
+    <None Include="Resources\panic.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sound-control.png" />
+    <None Include="Resources\setting.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
