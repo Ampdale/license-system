@@ -15,6 +15,9 @@ For more informations, checkout the other README files.
 
 - [x] ssl pinning
 
+- [x] gui for control licenses (C#)
+
+
 
 ## Credits
 
