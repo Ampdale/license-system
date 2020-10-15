@@ -4,6 +4,18 @@
 using namespace ls;
 using namespace hide_string;
 
+std::string first_numberstring(std::string const& str)
+{
+    char const* digits = "0123456789";
+    std::size_t const n = str.find_first_of(digits);
+    if (n != std::string::npos)
+    {
+        std::size_t const m = str.find_first_not_of(digits, n);
+        return str.substr(n, m != std::string::npos ? m - n : m);
+    }
+    return std::string();
+}
+
 validation::validation(
     const std::string_view& server_url,
     const std::string_view& server_public_key )
@@ -61,6 +73,28 @@ bool validation::get_subscriptions(
         std::string name   = sub.at( json_ptr( "/name" ) );
         std::size_t id     = sub.at( json_ptr( "/id" ) );
         std::int64_t until = sub.at( json_ptr( "/until" ) );
+
+        // получим текущее время с сайта (время на пк можно изменить)
+        // если часы спешат, то ответа от сервера не будет (!)
+        std::string datetime = ls::http_get("showcase.api.linx.twenty57.net/UnixTime/tounixtimestamp?datetime=now", "", "", 5L);
+
+        if (datetime.empty())
+        {
+            return false;
+        }
+
+        // заберем нужное значение
+        auto now = first_numberstring(datetime);
+
+        if (now.empty())
+        {
+            return false;
+        }
+
+        // проверям  
+        if ((std::int64_t)std::stoi (now) > until) {
+            return false;
+        }
 
         subs.emplace_back( std::make_tuple( std::move( name ), id, until ) );
     }
