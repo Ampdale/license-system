@@ -17,7 +17,7 @@ For more informations, checkout the other README files.
 
 - [x] gui for control licenses (C#)
 
-
+- [x]  subscription date validation (from server)
 
 ## Credits
 
