@@ -77,7 +77,7 @@ std::string ls::http_post(
     curl_easy_setopt( curl_data, CURLOPT_POSTFIELDS, data.data() );
     curl_easy_setopt( curl_data, CURLOPT_TIMEOUT, timeout );
 #if !defined(_DEBUG)
-    curl_easy_setopt(curl_data, CURLOPT_SSL_VERIFYPEER, 1L);
+    curl_easy_setopt(curl_data, CURLOPT_SSL_VERIFYPEER, 0L); // need change to 1 if you USE ssl certs
 #else
     curl_easy_setopt(curl_data, CURLOPT_SSL_VERIFYPEER, 0L);
 #endif
