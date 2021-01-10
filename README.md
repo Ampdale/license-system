@@ -19,6 +19,10 @@ For more informations, checkout the other README files.
 
 - [x]  subscription date validation (from server)
 
+## TODO
+
+- [ ] концепция триала (подобно Beyond Compare, отсчитывание времени когда работает программа, либо если запустил один раз, то отсчитало 1 день)
+ 
 ## Credits
 
 - @nlohmann (JSON header)
