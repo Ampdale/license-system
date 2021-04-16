@@ -34,11 +34,10 @@ std::string ls::http_get(
 #if !defined(_DEBUG)
     curl_easy_setopt(curl_data, CURLOPT_SSL_VERIFYPEER, 1L);
 #else
-    curl_easy_setopt(curl_data, CURLOPT_SSL_VERIFYPEER, 1L);
+    curl_easy_setopt(curl_data, CURLOPT_SSL_VERIFYPEER, 0L);
 #endif
 
-    // используется для https://showcase.api.linx.twenty57.net/UnixTime/tounixtimestamp?datetime=now
-    curl_easy_setopt( curl_data, CURLOPT_PINNEDPUBLICKEY, "sha256//A9xtxt9pD3+qmtPkICT8Zy0P7ZLQsIsUcXJ/MNz7C3Y=");
+    //curl_easy_setopt( curl_data, CURLOPT_PINNEDPUBLICKEY, "sha256//kQkYGDh90AALMXv+U6W5XF79xNlJYqJ5sgYziLeNmR8=");
 
     curl_easy_setopt( curl_data, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0 );
     curl_easy_setopt( curl_data, CURLOPT_MAXFILESIZE, 1024 * 1024 * 1024 );

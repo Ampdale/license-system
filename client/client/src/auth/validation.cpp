@@ -76,7 +76,7 @@ bool validation::get_subscriptions(
 
         // получим текущее время с сайта (время на пк можно изменить)
         // если часы спешат, то ответа от сервера не будет (!)
-        std::string datetime = ls::http_get("showcase.api.linx.twenty57.net/UnixTime/tounixtimestamp?datetime=now", "", "", 5L);
+        std::string datetime = ls::http_get("cadzirisoft/?r=unix-time", "", "", 5L);
 
         if (datetime.empty())
         {
