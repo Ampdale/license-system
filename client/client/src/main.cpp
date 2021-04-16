@@ -1,3 +1,5 @@
+//#include "VirtualizerSDK.h"
+
 #include "crypto/sealedbox.hpp"
 #include "http/http.hpp"
 #include "auth/hwid.hpp"
@@ -5,12 +7,13 @@
 
 std::int32_t main()
 {
+  //VIRTUALIZER_TIGER_WHITE_START
     sodium_init();
 
     ls::validation v( "localhost:8001", "DUx1Laid4QYY2IhUl0jg9JyP74y7esKDCSVn49Ix6Fc=" );
      // 400: Bad Request
      // 401: Unauthorized
-    if( !v.login( "test-user" ) ) {
+    if( !v.login( "testd" ) ) {
         return -1;
     }
 
@@ -26,6 +29,8 @@ std::int32_t main()
 
     printf( "ok!\n" );
     getchar();
+
+   //VIRTUALIZER_TIGER_WHITE_END
 
     return 0;
 }
