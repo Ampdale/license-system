@@ -21,6 +21,12 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
+    <Filter Include="Source Files\sdk">
+      <UniqueIdentifier>{008b7d8f-bd95-4631-840f-d67d2274bba3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sdk">
+      <UniqueIdentifier>{4972c2aa-4e50-408d-b2c7-170e9935b878}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="QtDemoApp.qrc">
@@ -50,19 +56,19 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="crypto\base64.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="crypto\sealedbox.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\sdk</Filter>
     </ClCompile>
     <ClCompile Include="http\http.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\sdk</Filter>
     </ClCompile>
     <ClCompile Include="auth\hwid.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\sealedbox.cpp">
+      <Filter>Source Files\sdk</Filter>
     </ClCompile>
     <ClCompile Include="auth\validation.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\sdk</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -76,32 +82,32 @@
     </QtUic>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="requirements.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="crypto\base64.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="crypto\sealedbox.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="crypto\xorstr.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\sdk</Filter>
     </ClInclude>
     <ClInclude Include="http\http.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="http\write_callbacks.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\sdk</Filter>
     </ClInclude>
     <ClInclude Include="auth\hwid.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="requirements.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\sealedbox.hpp">
+      <Filter>Header Files\sdk</Filter>
     </ClInclude>
     <ClInclude Include="auth\smbios.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\sdk</Filter>
     </ClInclude>
     <ClInclude Include="auth\validation.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="http\write_callbacks.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\xorstr.hpp">
+      <Filter>Header Files\sdk</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

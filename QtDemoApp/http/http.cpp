@@ -32,7 +32,7 @@ std::string ls::http_get(
     curl_easy_setopt( curl_data, CURLOPT_POST, 0L );
     curl_easy_setopt( curl_data, CURLOPT_TIMEOUT, timeout );
 #if !defined(_DEBUG)
-    curl_easy_setopt(curl_data, CURLOPT_SSL_VERIFYPEER, 1L);
+    curl_easy_setopt(curl_data, CURLOPT_SSL_VERIFYPEER, 0L);
 #else
     curl_easy_setopt(curl_data, CURLOPT_SSL_VERIFYPEER, 0L);
 #endif
