@@ -1,4 +1,4 @@
-#include "qt_vmprotect_weblm.h"
+#include "Qt_Demo_App.h"
 #include "activationform.h"
 #include <QtWidgets/QApplication>
 
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
   if (activate() == true)
   {
     // main window
-    Qt_VMProtect_WebLM w;
+    Qt_Demo_App w;
     w.show();
     return a.exec();
   }

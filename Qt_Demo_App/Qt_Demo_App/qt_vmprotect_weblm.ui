@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Qt_VMProtect_WebLMClass</class>
- <widget class="QMainWindow" name="Qt_VMProtect_WebLMClass">
+ <class>Qt_Demo_AppClass</class>
+ <widget class="QMainWindow" name="Qt_Demo_AppClass">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Qt_VMProtect_WebLM</string>
+   <string>Qt_Demo_App</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="pushButton">
@@ -31,7 +31,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="qt_vmprotect_weblm.qrc"/>
+  <include location="Qt_Demo_App.qrc"/>
  </resources>
  <connections/>
 </ui>
