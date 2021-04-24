@@ -1,6 +1,12 @@
 #include "activationform.h"
 #include <list>
 
+#include "crypto/sealedbox.hpp"
+#include "http/http.hpp"
+#include "auth/hwid.hpp"
+#include "auth/validation.hpp"
+
+
 ActivationForm::ActivationForm(QWidget *parent)
   : QWidget(parent)
 {

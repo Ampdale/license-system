@@ -55,9 +55,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>$(ProjectDir)contrib\libcurl\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(ProjectDir)contrib\libcurl\include;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalDependencies>libcurl_a_debug.lib;$(Qt_LIBS_);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -100,9 +107,23 @@
     <QtUic Include="QtDemoApp.ui" />
     <QtMoc Include="QtDemoApp.h" />
     <ClCompile Include="activationform.cpp" />
+    <ClCompile Include="auth\hwid.cpp" />
+    <ClCompile Include="auth\validation.cpp" />
+    <ClCompile Include="crypto\base64.cpp" />
+    <ClCompile Include="crypto\sealedbox.cpp" />
+    <ClCompile Include="http\http.cpp" />
     <ClCompile Include="QtDemoApp.cpp" />
     <ClCompile Include="main.cpp" />
     <QtMoc Include="activationform.h" />
+    <ClInclude Include="auth\hwid.hpp" />
+    <ClInclude Include="auth\smbios.hpp" />
+    <ClInclude Include="auth\validation.hpp" />
+    <ClInclude Include="crypto\base64.hpp" />
+    <ClInclude Include="crypto\sealedbox.hpp" />
+    <ClInclude Include="crypto\xorstr.hpp" />
+    <ClInclude Include="http\http.hpp" />
+    <ClInclude Include="http\write_callbacks.hpp" />
+    <ClInclude Include="requirements.hpp" />
     <ClInclude Include="stdafx.h" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">Create</PrecompiledHeader>
