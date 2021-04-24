@@ -69,7 +69,7 @@ color: rgb(255, 255, 255);</string>
       </layout>
      </item>
      <item>
-      <widget class="QPushButton" name="push_register">
+      <widget class="QPushButton" name="push_signIn">
        <property name="text">
         <string>Sign in</string>
        </property>

@@ -13,10 +13,10 @@ ActivationForm::~ActivationForm()
 
 void ActivationForm::ActivateLicense()
 {
-
+	// check license
 }
 
-void ActivationForm::on_push_register_clicked()
+void ActivationForm::on_push_signIn_clicked()
 {
   ActivateLicense();
 }

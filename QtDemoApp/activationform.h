@@ -18,6 +18,6 @@ class ActivationForm : public QWidget
   void ActivateLicense();
   Ui::ActivationForm ui;
  private slots:
-  void on_push_register_clicked();
+  void on_push_signIn_clicked();
   void on_push_exit_clicked();
 };
