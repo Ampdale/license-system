@@ -59,10 +59,20 @@
     <LibraryPath>$(ProjectDir)contrib\libcurl\lib\x64;$(ProjectDir)Build\Debug\x64;$(ProjectDir)contrib\libcurl\include;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IncludePath>$(SolutionDir)\contrib\json\single_include\nlohmann;$(SolutionDir)\contrib\libsodium\src\libsodium\include;$(ProjectDir)contrib\libcurl\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(ProjectDir)contrib\libcurl\lib\x64;$(ProjectDir)Build\Release\x64;$(ProjectDir)contrib\libcurl\include;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>
       <AdditionalDependencies>libcurl_a_debug.lib;$(Qt_LIBS_);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <AdditionalDependencies>libsodium.lib;libcurl_a.lib;$(Qt_LIBS_);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ClCompile>
       <LanguageStandard>stdcpp17</LanguageStandard>

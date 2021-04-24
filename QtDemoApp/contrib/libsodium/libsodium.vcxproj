@@ -168,6 +168,7 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)Build\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)Build\$(Configuration)\$(Platform)\Intermediate\</IntDir>
+    <IncludePath>$(SolutionDir)\contrib\libsodium\src\libsodium\include\sodium;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -302,6 +303,12 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PreBuildEvent>
+      <Command>"$(SolutionDir)/contrib/libsodium/msvc-scripts/process.bat"</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>"$(SolutionDir)/contrib/libsodium/test/default/wintest.bat" $(Configuration) $(Platform)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <ClCompile>
