@@ -84,14 +84,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)build\$(Configuration)-$(PlatformTarget)\</OutDir>
     <IntDir>$(SolutionDir)build\$(Configuration)-$(PlatformTarget)\tmp\$(ProjectName)\</IntDir>
-    <IncludePath>$(ProjectDir)contrib\libcurl\include;$(ProjectDir)contrib\json\single_include\nlohmann;$(ProjectDir)contrib\libsodium\src\libsodium\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)contrib\libcurl\lib\$(PlatformTarget);$(LibraryPath)</LibraryPath>
+    <IncludePath>Z:\dev\CodeVirtualizer\Include\C;$(ProjectDir)contrib\libcurl\include;$(ProjectDir)contrib\json\single_include\nlohmann;$(ProjectDir)contrib\libsodium\src\libsodium\include;$(IncludePath)</IncludePath>
+    <LibraryPath>Z:\dev\CodeVirtualizer\Lib\COFF;$(ProjectDir)contrib\libcurl\lib\$(PlatformTarget);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)build\$(Configuration)-$(PlatformTarget)\</OutDir>
     <IntDir>$(SolutionDir)build\$(Configuration)-$(PlatformTarget)\tmp\$(ProjectName)\</IntDir>
-    <IncludePath>$(ProjectDir)contrib\libcurl\include;$(ProjectDir)contrib\json\single_include\nlohmann;$(ProjectDir)contrib\libsodium\src\libsodium\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)contrib\libcurl\lib\$(PlatformTarget);$(LibraryPath)</LibraryPath>
+    <IncludePath>Z:\dev\CodeVirtualizer\Include\C;$(ProjectDir)contrib\libcurl\include;$(ProjectDir)contrib\json\single_include\nlohmann;$(ProjectDir)contrib\libsodium\src\libsodium\include;$(IncludePath)</IncludePath>
+    <LibraryPath>Z:\dev\CodeVirtualizer\Lib\COFF;$(ProjectDir)contrib\libcurl\lib\$(PlatformTarget);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -121,6 +121,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>libcurl_a_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateMapFile>true</GenerateMapFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -158,7 +159,9 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>libcurl_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>VirtualizerSDK64.lib;libcurl_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>client</MapFileName>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
