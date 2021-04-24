@@ -6,7 +6,6 @@
 #include <QSettings>
 #include <QDebug>
 #include "ui_activationform.h"
-#include "VMProtectSDK.h"
 
 class ActivationForm : public QWidget
 {

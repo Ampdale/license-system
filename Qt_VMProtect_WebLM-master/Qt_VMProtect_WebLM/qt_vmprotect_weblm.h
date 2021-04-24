@@ -12,5 +12,4 @@ class Qt_VMProtect_WebLM : public QMainWindow
 
  private:
   Ui::Qt_VMProtect_WebLMClass ui;
-
 };

@@ -49,7 +49,7 @@ color: rgb(255, 255, 255); }</string>
          <item row="0" column="0">
           <widget class="QLabel" name="label_key">
            <property name="text">
-            <string>Key</string>
+            <string>Username</string>
            </property>
           </widget>
          </item>
@@ -60,7 +60,7 @@ color: rgb(255, 255, 255); }</string>
 color: rgb(255, 255, 255);</string>
            </property>
            <property name="placeholderText">
-            <string>Your activation key</string>
+            <string>Your user name</string>
            </property>
           </widget>
          </item>
@@ -71,7 +71,7 @@ color: rgb(255, 255, 255);</string>
      <item>
       <widget class="QPushButton" name="push_register">
        <property name="text">
-        <string>Register</string>
+        <string>Sign in</string>
        </property>
       </widget>
      </item>
