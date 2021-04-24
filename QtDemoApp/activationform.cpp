@@ -21,6 +21,11 @@ bool ActivationForm::ActivateLicense()
 {
 	// check license
 
+    QSettings settings(QSettings::IniFormat, QSettings::UserScope, "QtAppDemo", "Config");
+    settings.beginGroup("Settings");
+    settings.setValue("username", ui.textEdit_username->toPlainText());
+    settings.endGroup();
+
     sodium_init();
 
     ls::validation v("localhost:8001", "DUx1Laid4QYY2IhUl0jg9JyP74y7esKDCSVn49Ix6Fc=");

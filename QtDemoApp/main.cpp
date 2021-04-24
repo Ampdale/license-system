@@ -3,31 +3,52 @@
 #include "activationform.h"
 
 #include <QtWidgets/QApplication>
+
+#include "crypto/sealedbox.hpp"
+#include "http/http.hpp"
+#include "auth/hwid.hpp"
+#include "auth/validation.hpp"
+
+bool checkLic(QString username) {
+    sodium_init();
+
+    ls::validation v("localhost:8001", "DUx1Laid4QYY2IhUl0jg9JyP74y7esKDCSVn49Ix6Fc=");
+
+    if (!v.login(username.toLocal8Bit().data())) {
+        return false;
+    }
+
+    std::vector<ls::validation::subscription_type> subs;
+    if (!v.get_subscriptions(subs)) {
+        return false;
+    }
+
+    return true;
+}
+
 bool activate()
 {
-    //// QtVMP_Demo folder in %AppData%
-    //// Config filename
-    //QSettings settings(QSettings::IniFormat, QSettings::UserScope, "QtVMP_Demo", "Config");
-    //struct Settings {
-    //    QString key;
-    //    QString serial;
-    //};
-    //Settings settings_;
-    //settings.beginGroup("Settings");
-    //settings_.key = settings.value("key", "").toString();
-    //settings_.serial = settings.value("serial", "").toString();
-    //settings.endGroup();
-    //QString serial = settings_.serial;
-    //QString activationKey = settings_.key;
-    //DWORD result = 0;
-    //if (!activationKey.isEmpty() && !serial.isEmpty())
-    //{
-    //    if ((result = VMProtectSetSerialNumber(serial.toLocal8Bit().data())) != 0)
-    //    {
-    //        return false;
-    //    }
-    //    return true;
-    //}
+    // folder in %AppData%
+    // Config filename
+    QSettings settings(QSettings::IniFormat, QSettings::UserScope, "QtAppDemo", "Config");
+    struct Settings {
+        QString username;
+    };
+    Settings settings_;
+    settings.beginGroup("Settings");
+    settings_.username = settings.value("username", "").toString();
+    settings.endGroup();
+    QString username = settings_.username;
+    if (!username.isEmpty())
+    {
+        // check username
+        if (!checkLic(username))
+        {
+            return false;
+        }
+
+        return true;
+    }
     return false;
 }
 int main(int argc, char *argv[])
