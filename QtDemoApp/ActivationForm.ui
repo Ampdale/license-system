@@ -47,14 +47,14 @@ color: rgb(255, 255, 255); }</string>
        <item>
         <layout class="QFormLayout" name="formLayout_3">
          <item row="0" column="0">
-          <widget class="QLabel" name="label_key">
+          <widget class="QLabel" name="label_username">
            <property name="text">
             <string>Enter credentials</string>
            </property>
           </widget>
          </item>
          <item row="1" column="0" colspan="2">
-          <widget class="QTextEdit" name="textEdit_key">
+          <widget class="QTextEdit" name="textEdit_username">
            <property name="styleSheet">
             <string notr="true">background-color: black;
 color: rgb(255, 255, 255);</string>

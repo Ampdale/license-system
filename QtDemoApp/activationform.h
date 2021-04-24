@@ -15,7 +15,7 @@ class ActivationForm : public QWidget
   ActivationForm(QWidget *parent = Q_NULLPTR);
   ~ActivationForm();
 
-  void ActivateLicense();
+  bool ActivateLicense();
   Ui::ActivationForm ui;
  private slots:
   void on_push_signIn_clicked();
